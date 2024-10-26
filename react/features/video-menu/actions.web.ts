@@ -1,4 +1,5 @@
 import { SHOW_CONNECTION_INFO } from '../base/connection/actionTypes';
+import { BAN_PARTICIPANT} from './types';
 
 export * from './actions.any';
 
@@ -14,4 +15,27 @@ export function renderConnectionStatus(showConnectionInfo: boolean) {
         type: SHOW_CONNECTION_INFO,
         showConnectionInfo
     };
+}
+
+export function banParticipantIP(participantID: string) {
+        return (dispatch, getState) => {
+            const state = getState();
+            const participant = state['features/base/participants'].find(
+                p => p.id === participantID
+            );
+    
+            if (participant) {
+                const conference = state['features/base/conference'].conference;
+                if (conference) {
+                    conference.sendCommandOnce('ban-ip', { attributes: { jid: participant.jid } });
+                }
+            }
+    
+            // Optionally dispatch an action to update state or trigger reducers
+            dispatch({
+                type: BAN_PARTICIPANT,
+                participantID
+            });
+        };
+    
 }

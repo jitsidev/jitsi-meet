@@ -1,3 +1,4 @@
+export const BAN_PARTICIPANT = 'BAN_PARTICIPANT';
 export interface IButtonProps {
 
     /**

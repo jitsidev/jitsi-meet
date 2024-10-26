@@ -33,6 +33,7 @@ import CustomOptionButton from './CustomOptionButton';
 import DemoteToVisitorButton from './DemoteToVisitorButton';
 import GrantModeratorButton from './GrantModeratorButton';
 import KickButton from './KickButton';
+import BanIPButton from './BanIPButton';
 import LowerHandButton from './LowerHandButton';
 import MuteButton from './MuteButton';
 import MuteEveryoneElseButton from './MuteEveryoneElseButton';

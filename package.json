@@ -80,7 +80,7 @@
     "react-dom": "18.2.0",
     "react-emoji-render": "2.0.1",
     "react-focus-on": "3.8.1",
-    "react-i18next": "10.11.4",
+    "react-i18next": "^15.1.0",
     "react-linkify": "1.0.0-alpha",
     "react-native": "0.73.8",
     "react-native-background-timer": "2.4.1",
@@ -204,6 +204,7 @@
     "validate": "npm ls",
     "tsc-test:web": "tsc --project tsconfig.web.json --listFilesOnly | grep -v node_modules | grep native",
     "tsc-test:native": "tsc --project tsconfig.native.json --listFilesOnly | grep -v node_modules | grep web",
+    "build": "webpack --config webpack.config.js",
     "start": "make dev"
   },
   "resolutions": {
